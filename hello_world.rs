@@ -22,34 +22,38 @@ fn use_managed_box() {
     // go out of scope, then the allocation will be freed.
 
     fn print_box(x: @int, y: @int) {
-        println(fmt!("%? = %?", x, *x));
-        println(fmt!("%? = %?", y, *y));
+        println("");
+        println("Managed box usage:");
+        println(fmt!("    Variable x with address %? has value %?", x, *x));
+        println(fmt!("    Variable y with address %? has value %?", y, *y));
     }
 
     print_box(x, y);
 }
 
 fn use_owned_box() {
-    /** Owned box has unique memory slot **/
+    /* Owned box has unique memory slot */
     let x = ~10;
-    /** Doing this:
+    /* Doing this:
 
         let y = x;
 
     Gives warning: copying a non-implicitly copyable type
-    Instead do it explicitly: **/
+    Instead do it explicitly: */
     let y = copy x;
 
     let z = *x + *y;
     assert z == 20;
-    println(z.to_str());
 
+    /*
     let new_x = move x;
-    let z = *new_x + *y; // cause error: use of moved variable
+    let new_z = *x + *y; // cause error: use of moved variable
+    assert new_z == 20;
+    */
 }
 
 fn main() {
-    printl(fmt!("Factorial of 5 is %?", factorial(5)))
+    println(fmt!("Factorial of 5 is %?", factorial(5)));
     use_managed_box();
-    use_owned_box()
+    use_owned_box();
 }
