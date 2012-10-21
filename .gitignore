@@ -10,3 +10,6 @@
 *.lai
 *.la
 *.a
+
+# Compiled binary of hello_world app
+hello_world

@@ -1,0 +1,5 @@
+#[link(name = "hello_world",
+       vers = "0.4",
+       author = "Kirill Panshin")];
+
+extern mod std;
