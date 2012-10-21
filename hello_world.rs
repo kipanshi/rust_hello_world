@@ -93,4 +93,9 @@ fn main() {
     managed_box();
     owned_box();
     borrowed_pointers();
+
+    println("");
+    
+    let args = os::args();
+    println(fmt!("Command line args: %?", args));
 }
