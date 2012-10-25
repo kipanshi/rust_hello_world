@@ -1,0 +1,3 @@
+[submodule "rust-pcre"]
+	path = rust-pcre
+	url = git://github.com/uasi/rust-pcre.git

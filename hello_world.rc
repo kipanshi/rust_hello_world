@@ -3,3 +3,4 @@
        author = "Kirill Panshin")];
 
 extern mod std;
+extern mod pcre;
